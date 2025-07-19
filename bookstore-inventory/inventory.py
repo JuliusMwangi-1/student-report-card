@@ -39,3 +39,8 @@ def view_inventory():
     books = load_inventory()
     for book in books:
         print(f"{book['title']} by {book['author']} - ${book['price']} (Stock: {book['stock']})")
+
+def search_books(keyword):
+    books = load_inventory()
+    results = [book for book in books if keyword.lower() in book["title"].lower()]
+    return results

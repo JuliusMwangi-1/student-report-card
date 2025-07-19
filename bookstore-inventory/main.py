@@ -15,3 +15,14 @@ while True:
         view_inventory()
     elif choice == "3":
         break
+
+    elif choice == "4":
+        keyword = input("Enter title keyword to search: ")
+        results = search_books(keyword)
+        if results:
+            for book in results:
+                print(f"{book['title']} by {book['author']}")
+        else:
+            print("No books found.")
+
+print("\n1. Add Book\n2. View Inventory\n3. Exit\n4. Search")
